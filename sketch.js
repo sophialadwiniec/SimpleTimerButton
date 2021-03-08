@@ -19,7 +19,6 @@ function setup() {
   timer = new Timer(1000); 
 }
 
-
 // Draw code goes here
 function draw() {
   background(255);
@@ -32,6 +31,7 @@ function draw() {
 
 }
 
+// makes the timer button that starts and stops the timer  
 function makeButton() {
   button = new Clickable(); 
   button.textSize = 30;
@@ -49,10 +49,12 @@ function makeButton() {
   button.onRelease = buttonOnOutside; 
 }
 
+// changes the color to white when it is not being touched by the mouse 
 buttonOnOutside = function () {
   this.color = "#FFFFFF";
 }
 
+// changes the color to hot pink when it is being touched by the mouse 
 buttonHover = function () {
   this.color = "#FF69B4"; 
 }
@@ -67,7 +69,8 @@ buttonPressed = function () {
     running = true; 
   }
 }
- 
+
+// updates the timer second by second 
 function updateTimer() {
   if(timer.expired()) {
     seconds++;
